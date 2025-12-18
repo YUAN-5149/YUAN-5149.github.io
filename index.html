@@ -111,6 +111,22 @@
             text-align: center;
         }
         .order-section h2 { color: white; border-bottom: 2px solid rgba(255,255,255,0.3); }
+
+/* === 新增：紅色橢圓形徽章樣式 === */
+        .status-badge {
+            background-color: #d63031; /* 紅色背景 */
+            color: white;              /* 白色文字 */
+            font-size: 1rem;           /* 字體大小 */
+            padding: 6px 15px;         /* 內距，撐開變成橢圓 */
+            border-radius: 50px;       /* 極大圓角產生橢圓效果 */
+            vertical-align: middle;    /* 垂直置中對齊 */
+            margin-right: 12px;        /* 與標題文字的間距 */
+            font-weight: normal;       /* 不用粗體 */
+            letter-spacing: 1px;       /* 增加字距 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 微微陰影 */
+            display: inline-block;     /* 保持行內區塊特性 */
+        }
+
         .order-form {
             max-width: 600px;
             margin: 0 auto;
@@ -151,6 +167,12 @@
             .hero h1 { font-size: 2.5rem; }
             .about-container { flex-direction: column; }
             .order-form { padding: 25px; }
+
+/* 手機版調整徽章位置 */
+            .status-badge {
+                display: block;
+                width: fit-content;
+                margin: 0 auto 10px auto;  
         }
         @keyframes navLinkFade { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0px); } }
     </style>
@@ -208,7 +230,8 @@
 
     <section id="order" class="order-section">
         <div class="container">
-            <h2>線上預購單</h2>
+             <!-- 這裡是新增的部分 -->
+            <h2><span class="status-badge">此商品販售中</span>線上預購單</h2>
             <p>填寫完畢後，系統將自動匯入訂單，並可選擇撥打電話再次確認</p>
             
             <!-- 重要：所有的 input 必須要有 name 屬性，才能傳送到 Google Sheet -->
